@@ -1,0 +1,49 @@
+1. Data Fetching:
+
+Data fetching refers to the process of obtaining data from a data source, which can be a database, an API, a file, or any other data store. Data fetching can be done for various purposes, such as retrieving information to display on a web page or to perform calculations and analyses.
+
+Example: Fetching data from a database
+
+Suppose you have a database of customer information, and you want to fetch the names of all customers. You can use SQL to fetch this data from a relational database:
+SELECT name FROM customers;
+In this example, the SQL query fetches the name column from the customers table.
+  2. Data Filtering:
+
+Data filtering involves selecting a subset of data from a larger dataset based on specific criteria. This is often done to narrow down the data to only what is relevant or useful for a particular task.
+
+Example: Filtering data from a list
+
+Let's say you have a list of numbers, and you want to filter out only the even numbers. You can use Python to filter the data:
+  numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Filter even numbers
+even_numbers = [x for x in numbers if x % 2 == 0]
+print(even_numbers)
+In this example, a list comprehension is used to filter out even numbers from the numbers list.
+  Data Fetching and Filtering Logic:
+
+Often, data fetching and filtering go hand in hand. You first fetch data from a source, and then you apply filtering logic to extract the relevant information. Here's a more comprehensive example that combines both concepts:
+
+Example: Fetching and filtering data from a JSON API
+  In this example, we use the requests library to fetch data from an API, and then we apply a filtering condition to extract only the products with prices less than $50.
+
+Remember that data fetching and filtering can vary depending on the data source and the programming language or tools you are using. The logic you use for filtering will depend on your specific requirements and the structure of the data you are working with.
+
+
+
+
+
+
+Suppose you are working with a JSON API that provides a list of products, and you want to fetch and filter the products that have a price less than $50:
+import requests
+
+# Fetch data from the API
+response = requests.get("https://example.com/api/products")
+data = response.json()
+
+# Filter products with price < $50
+filtered_products = [product for product in data['products'] if product['price'] < 50]
+
+# Display the filtered products
+for product in filtered_products:
+    print(f"Product Name: {product['name']}, Price: {product['price']}")
